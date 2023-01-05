@@ -7,7 +7,6 @@ import 'package:qwiyi_flutter/src/screens/intro_screen/presentation/view/introvi
 
 
 void main() {
-
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     const QwiyiApp());

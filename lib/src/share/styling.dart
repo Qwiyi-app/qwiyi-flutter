@@ -4,7 +4,7 @@ import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 
 TextStyle normalPrimaryTextStyle(BuildContext? context) => const TextStyle(
     fontWeight: FontWeight.w400,
-    fontSize: UIHelper.kSmallFont,
+    fontSize: UIHelper.kMediumFont,
     color: primaryColor,
     fontFamily: "montserrat");
 TextStyle normalSecondaryTextStyle(BuildContext? context) => const TextStyle(

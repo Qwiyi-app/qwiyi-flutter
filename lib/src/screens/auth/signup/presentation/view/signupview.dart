@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qwiyi_flutter/src/screens/auth/saveaccount/presentation/view/saveAccountView.dart';
 import '../../../../../share/color.dart';
 import '../../../../../widget/errors.dart';
 import '../../../../../share/function.dart';
@@ -97,8 +98,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   PrimaryButton(
-                      press: () {},
-                      text: 'Sign In',
+                      press: () {
+                        navigateAndReplaceRoute(
+                            context, const SaveAccountScreen());
+                      },
+                      text: 'Sign Up',
                       width: 150,
                       textSize: 18.sp),
                   addVerticalSp(16),
@@ -113,7 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       navigateToRoute(context, const SignUpScreen());
                     },
                     child: Text(
-                      "Sign Up for Qwiyi",
+                      "Sign In for Qwiyi",
                       style: normalPrimaryTextStyle(context).copyWith(
                           fontSize: 16.sp, fontWeight: FontWeight.w500),
                     ),

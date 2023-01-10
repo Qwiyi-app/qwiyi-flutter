@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qwiyi_flutter/locator.dart';
 import 'package:provider/provider.dart';
-import 'package:qwiyi_flutter/src/screens/intro_screen/presentation/view/introview.dart';
+import 'package:qwiyi_flutter/src/screens/home/presentation/add_money/add_money.dart';
 
 
 void main() {
@@ -34,7 +34,7 @@ class QwiyiApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const IntroView(),
+      home:  AddMoney(),
     );
       },
       );

@@ -45,7 +45,7 @@ class FormError extends StatelessWidget {
         addVerticalSp(5),
         Text(
           error,
-          style: normalPrimaryTextStyle(context).copyWith(color: Colors.red),
+          style: QwiyiTypography.normalPrimaryTextStyle(context).copyWith(color: Colors.red),
         )
       ],
     );

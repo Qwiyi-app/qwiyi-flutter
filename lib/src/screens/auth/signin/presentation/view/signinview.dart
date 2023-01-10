@@ -48,7 +48,7 @@ class _SignInScreenState extends State<SignInScreen> {
           elevation: 0,
           title: Text(
             'Sign In',
-            style: bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp),
+            style: QwiyiTypography.bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp),
           )),
       body: SafeArea(
           child: SizedBox(
@@ -67,7 +67,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     children: [
                       Text(
                         'Email',
-                        style: normalPrimaryTextStyle(context)
+                        style: QwiyiTypography.normalPrimaryTextStyle(context)
                             .copyWith(fontSize: 14.sp),
                       ),
                       addVerticalSp(10),
@@ -75,7 +75,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       addVerticalSp(18),
                       Text(
                         'Password',
-                        style: normalPrimaryTextStyle(context)
+                        style: QwiyiTypography.normalPrimaryTextStyle(context)
                             .copyWith(fontSize: 14.sp),
                       ),
                       addVerticalSp(10),
@@ -95,7 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   addVerticalSp(16),
                   Text(
                     "Don't have an account?",
-                    style: normalPrimaryTextStyle(context)
+                    style: QwiyiTypography.normalPrimaryTextStyle(context)
                         .copyWith(fontSize: 14.sp),
                   ),
                   addVerticalSp(9),
@@ -105,7 +105,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                     child: Text(
                       "Sign Up for Qwiyi",
-                      style: normalPrimaryTextStyle(context).copyWith(
+                      style: QwiyiTypography.normalPrimaryTextStyle(context).copyWith(
                           fontSize: 16.sp, fontWeight: FontWeight.w500),
                     ),
                   ),

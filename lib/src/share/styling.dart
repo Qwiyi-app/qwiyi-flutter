@@ -2,27 +2,55 @@ import 'package:flutter/material.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 
-TextStyle normalPrimaryTextStyle(BuildContext? context) => const TextStyle(
+    class QwiyiTypography{
+
+
+   // fontWeight: FontWeight.w500,
+   static TextStyle normalPrimaryTextStyle(BuildContext? context) => const TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: UIHelper.kMediumFont,
     color: primaryColor,
     fontFamily: "montserrat");
-TextStyle normalSecondaryTextStyle(BuildContext? context) => const TextStyle(
+
+     static TextStyle normalTextStyle(BuildContext? context) => const TextStyle(
+    fontWeight: FontWeight.w100,);
+
+    static TextStyle normalSecondaryTextStyle(BuildContext? context) => const TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: UIHelper.kMediumFont,
     color: backgroundColor,
     fontFamily: "montserrat");
-TextStyle bigPrimaryTextStyle(BuildContext? context) => const TextStyle(
+
+  static TextStyle bigPrimaryTextStyle(BuildContext? context) => const TextStyle(
     fontWeight: FontWeight.w800,
     fontSize: UIHelper.kLargeFont,
     color: primaryColor,
     fontFamily: "montserrat");
+
 TextStyle bigSecondaryTextStyle(BuildContext? context) => const TextStyle(
     fontWeight: FontWeight.w800,
     fontSize: UIHelper.kLargeFont,
     color: backgroundColor,
     fontFamily: "montserrat");
 
+    static TextStyle bigTextStyle(BuildContext? context) => const TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: UIHelper.kLargeFont,
+    fontFamily: "montserrat");
+    }
+    
+
+  class DummyText extends StatelessWidget {
+  const DummyText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Dummy Text',
+      style: QwiyiTypography.normalTextStyle(context),
+    );
+  }
+}
 InputDecoration textFieldDecoration(String hintText) {
   return InputDecoration(
     contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),

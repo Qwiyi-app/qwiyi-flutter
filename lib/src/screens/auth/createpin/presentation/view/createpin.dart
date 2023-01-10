@@ -1,24 +1,22 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/auth/saveaccount/presentation/view/accDetailsScreen.dart';
-import 'package:qwiyi_flutter/src/share/function.dart';
-import 'package:qwiyi_flutter/src/share/styling.dart';
-import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
+import '../../../../../share/color.dart';
+import '../../../../../share/styling.dart';
+import '../../../../../share/ui_helper.dart';
 import '../../../../../widget/errors.dart';
 
-class SaveAccountScreen extends StatefulWidget {
-  const SaveAccountScreen({super.key});
+class CreatePinScreen extends StatefulWidget {
+  const CreatePinScreen({super.key});
 
   @override
-  State<SaveAccountScreen> createState() => _SaveAccountScreenState();
+  State<CreatePinScreen> createState() => _CreatePinScreenState();
 }
 
-class _SaveAccountScreenState extends State<SaveAccountScreen> {
+class _CreatePinScreenState extends State<CreatePinScreen> {
   final formkey = GlobalKey<FormState>();
-  late String bankName;
-  late String accountNumber;
+  late int newPin;
+  late int confirmPin;
   final List<String> errors = [];
 
   void removeError({required String error}) {
@@ -40,6 +38,12 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
+      appBar: AppBar(
+        backgroundColor: backgroundColor,
+        automaticallyImplyLeading: true,
+        elevation: 0,
+      ),
       body: SafeArea(
           child: SizedBox(
         height: screenHeight(context),
@@ -51,7 +55,7 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                'Save Account Details',
+                'Create Account Pin',
                 style: QwiyiTypography.bigPrimaryTextStyle(context)
                     .copyWith(fontSize: 32.sp),
               ),
@@ -61,31 +65,28 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Bank Name',
+                        'New Pin',
                         style: QwiyiTypography.normalPrimaryTextStyle(context)
                             .copyWith(fontSize: 14),
                       ),
                       addVerticalSp(10),
-                      buildBankNameField(),
+                      buildNewPinField(),
                       addVerticalSp(18),
                       Text(
-                        'Account Number',
+                        'Confirm Pin',
                         style: QwiyiTypography.normalPrimaryTextStyle(context)
                             .copyWith(fontSize: 14),
                       ),
                       addVerticalSp(10),
-                      buildAccNumField(),
+                      buildConfirmPinField(),
                       addVerticalSp(20),
                       FormError(errors: errors)
                     ],
                   )),
               Center(
-                child: PrimaryButton(
-                    press: () {
-                      navigateToRoute(
-                          context, const ViewAccountDetailsScreen());
-                    },
-                    text: 'Save',
+                child: SecondaryButton(
+                    press: () {},
+                    text: 'Create',
                     width: 220.sp,
                     textSize: 20.sp),
               )
@@ -96,16 +97,16 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
     );
   }
 
-  TextFormField buildBankNameField() {
+  TextFormField buildNewPinField() {
     return TextFormField(
-        onSaved: (newValue) => bankName = newValue!,
+        onSaved: (newValue) => newPin = newValue! as int,
         onChanged: (value) {
           if (value.isNotEmpty && errors.contains(bankNameNullError)) {
             setState(() {
               errors.remove(bankNameNullError);
             });
           }
-          bankName = value;
+          newPin = value as int;
         },
         validator: (value) {
           if (value!.isEmpty && !errors.contains(bankNameNullError)) {
@@ -117,20 +118,20 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
 
           return null;
         },
-        keyboardType: TextInputType.text,
-        decoration: textFieldDecoration('Enter your bank name'));
+        keyboardType: TextInputType.number,
+        decoration: textFieldDecoration('1234'));
   }
 
-  TextFormField buildAccNumField() {
+  TextFormField buildConfirmPinField() {
     return TextFormField(
-        onSaved: (newValue) => accountNumber = newValue!,
+        onSaved: (newValue) => confirmPin = newValue! as int,
         onChanged: (value) {
           if (value.isNotEmpty && errors.contains(accNumNullError)) {
             setState(() {
               errors.remove(accNumNullError);
             });
           }
-          accountNumber = value;
+          confirmPin = value as int;
         },
         validator: (value) {
           if (value!.isEmpty && !errors.contains(accNumNullError)) {
@@ -143,6 +144,6 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
           return null;
         },
         keyboardType: TextInputType.number,
-        decoration: textFieldDecoration('Enter your Account Number'));
+        decoration: textFieldDecoration('1234'));
   }
 }

@@ -29,8 +29,9 @@ class PrimaryButton extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(20))),
           child: Center(
               child: Text(text,
-                  style: QwiyiTypography.normalSecondaryTextStyle(context).copyWith(
-                      fontSize: textSize, fontWeight: FontWeight.w700))),
+                  style: QwiyiTypography.normalSecondaryTextStyle(context)
+                      .copyWith(
+                          fontSize: textSize, fontWeight: FontWeight.w700))),
         ));
   }
 }
@@ -60,8 +61,11 @@ class SecondaryButton extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             child: Center(
               child: Text(text,
-                  style: QwiyiTypography.normalSecondaryTextStyle(context).copyWith(
-                      fontSize: textSize, fontWeight: FontWeight.w700)),
+                  style: QwiyiTypography.normalSecondaryTextStyle(context)
+                      .copyWith(
+                          fontSize: textSize,
+                          fontWeight: FontWeight.w700,
+                          color: primaryColor)),
             )));
   }
 }

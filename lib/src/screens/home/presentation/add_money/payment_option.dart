@@ -7,7 +7,9 @@ import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
-import 'package:qwiyi_flutter/src/widget/brand_button.dart';
+
+import '../../../../widget/button/brand_button.dart';
+
 
 class PaymentOption extends StatelessWidget {
   const PaymentOption({super.key});

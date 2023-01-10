@@ -1,13 +1,10 @@
-
-
-
 import 'package:flutter/material.dart';
 
 /// Contains useful consts to reduce boilerplate and duplicate code
 class UIHelper {
 //font size
   static const double kSmallFont = 5.0;
-  static const double kMediumFont = 36;
+  static const double kMediumFont = 14;
   static const double kLargeFont = 24.0;
 
   // Vertical spacing constants. Adjust to your liking.

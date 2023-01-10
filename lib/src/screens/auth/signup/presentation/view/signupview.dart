@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qwiyi_flutter/src/screens/auth/saveaccount/presentation/view/saveAccountView.dart';
 import '../../../../../share/color.dart';
 import '../../../../../widget/errors.dart';
 import '../../../../../share/function.dart';
@@ -48,7 +49,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         elevation: 0,
         title: Text(
           'Sign Up',
-          style: QwiyiTypography.bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp),
+          style: QwiyiTypography.bigPrimaryTextStyle(context)
+              .copyWith(fontSize: 36.sp),
         ),
       ),
       body: SafeArea(
@@ -97,13 +99,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   PrimaryButton(
-                      press: () {},
-                      text: 'Sign In',
+                      press: () {
+                        navigateAndReplaceRoute(
+                            context, const SaveAccountScreen());
+                      },
+                      text: 'Sign Up',
                       width: 150,
                       textSize: 18.sp),
                   addVerticalSp(16),
                   Text(
-                    "Don't have an account?",
+                    "Already have an account?",
                     style: QwiyiTypography.normalPrimaryTextStyle(context)
                         .copyWith(fontSize: 14.sp),
                   ),
@@ -113,9 +118,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       navigateToRoute(context, const SignUpScreen());
                     },
                     child: Text(
-                      "Sign Up for Qwiyi",
-                      style: QwiyiTypography.normalPrimaryTextStyle(context).copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.w500),
+                      "Sign In for Qwiyi",
+                      style: QwiyiTypography.normalPrimaryTextStyle(context)
+                          .copyWith(
+                              fontSize: 16.sp, fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],

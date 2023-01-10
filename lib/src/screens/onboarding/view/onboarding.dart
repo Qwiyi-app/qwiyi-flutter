@@ -24,7 +24,7 @@ class OnboardingScreeen extends StatelessWidget {
             children: [
               Text('Qwiyi',
                   style:
-                      bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp)),
+                      QwiyiTypography.bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp)),
               Container(
                 height: screenAwareSize(365, context),
                 width: screenAwareSize(235, context, width: true),
@@ -47,7 +47,7 @@ class OnboardingScreeen extends StatelessWidget {
                   addVerticalSp(16),
                   Text(
                     "Don't have an account?",
-                    style: normalPrimaryTextStyle(context)
+                    style: QwiyiTypography.normalPrimaryTextStyle(context)
                         .copyWith(fontSize: 14.sp),
                   ),
                   addVerticalSp(9),
@@ -57,7 +57,7 @@ class OnboardingScreeen extends StatelessWidget {
                     },
                     child: Text(
                       "Sign Up for Qwiyi",
-                      style: normalPrimaryTextStyle(context).copyWith(
+                      style: QwiyiTypography.normalPrimaryTextStyle(context).copyWith(
                           fontSize: 16.sp, fontWeight: FontWeight.w500),
                     ),
                   ),

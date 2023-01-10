@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/auth/signin/presentation/view/signinview.dart';
 import 'package:qwiyi_flutter/src/screens/onboarding/view/onboarding.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';

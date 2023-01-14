@@ -106,6 +106,7 @@ class _ViewAccountDetailsScreenState extends State<ViewAccountDetailsScreen> {
                     ),
                     Center(
                       child: SecondaryButton(
+                        radius: 20.sp,
                           press: () {},
                           text: "Add new",
                           width: 130.sp,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qwiyi_flutter/src/screens/home/presentation/home_screen/view/homeScreen.dart';
+import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
 import '../../../../../share/color.dart';
 import '../../../../../share/styling.dart';
@@ -85,7 +87,10 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
                   )),
               Center(
                 child: SecondaryButton(
-                    press: () {},
+                    radius: 20.sp,
+                    press: () {
+                      navigateAndReplaceRoute(context, const HomeScreen());
+                    },
                     text: 'Create',
                     width: 220.sp,
                     textSize: 20.sp),

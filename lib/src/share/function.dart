@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 
 void popSheet(BuildContext context) {
   Navigator.of(context).pop();
@@ -20,4 +22,10 @@ void navigateAndRemoveUntilRoute(BuildContext? context, dynamic routeClass) {
 
 void dismissKeyboard() {
   FocusManager.instance.primaryFocus?.unfocus();
+}
+
+NumberFormat currency(context) {
+  var format =
+      NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN');
+  return format;
 }

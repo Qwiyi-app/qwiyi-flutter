@@ -46,7 +46,7 @@ class QwiyiTextField extends StatelessWidget {
         Text(
           label!,
           style: QwiyiTypography.normalTextStyle(context).copyWith(
-              fontSize: screenAwareSize(22, context)),
+              fontSize: screenAwareSize(22, context,), color: primaryColor),
         ),
         SizedBox(height: 7.h),
         Padding(
@@ -70,7 +70,7 @@ class QwiyiTextField extends StatelessWidget {
             inputFormatters: [
               formatter ?? FilteringTextInputFormatter.singleLineFormatter
             ],
-            // style: QwiyiTypography.normalTextStyle(context).copyWith(fontSize: 15.sp).copyWith(color: primaryColor),
+          
             decoration: InputDecoration(
               fillColor: Colors.grey.withOpacity(0.1),
               filled: true,

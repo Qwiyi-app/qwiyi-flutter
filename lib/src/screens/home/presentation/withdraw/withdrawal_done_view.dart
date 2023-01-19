@@ -3,13 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/add_money/withdraw/withdraw_view.dart';
+import 'package:qwiyi_flutter/src/screens/home/presentation/withdraw/withdraw_view.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
-import 'package:qwiyi_flutter/src/widget/brand_button.dart';
+import 'package:qwiyi_flutter/src/widget/button/brand_button.dart';
 
 class DoneWithdrawal extends StatefulWidget {
   const DoneWithdrawal({super.key});
@@ -23,7 +23,7 @@ class _DoneWithdrawalState extends State<DoneWithdrawal> with TickerProviderStat
 
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     _controller = AnimationController(vsync: this);
   }

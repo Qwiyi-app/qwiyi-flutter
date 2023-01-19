@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class QwiyiAppBar extends StatelessWidget implements PreferredSizeWidget {
 
@@ -20,7 +19,6 @@ class QwiyiAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
-      toolbarHeight: 70.h,
       leading:  IconButton(
         onPressed: onClick,
         icon: Icon(lIcon, color: lColor,) ),

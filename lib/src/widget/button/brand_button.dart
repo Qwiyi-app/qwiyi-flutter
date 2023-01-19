@@ -57,7 +57,8 @@ class QwiyiButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? textColor;
-  final Color background;
+  final Color? background;
+  final Color? borderColor;
   final Function? onTap;
   final AlignmentGeometry? alignment;
   const QwiyiButton({
@@ -66,8 +67,9 @@ class QwiyiButton extends StatelessWidget {
     required this.label,
     this.width,
     this.height,
-    this.background = primaryColorFunction,
+    this.background,
     this.textColor, 
+    this.borderColor,
     this.onTap,
     this.alignment
   }) : super(key: key);
@@ -78,12 +80,12 @@ class QwiyiButton extends StatelessWidget {
       onTap: onClick,
       child: Center(
         child: Container(
-          
           width: width ?? screenWidth(context) / 1.9,
           height: height ?? screenAwareSize(75, context),
           decoration: BoxDecoration(
-            color: background,
+            color: background ?? primaryColorFunction,
             borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: borderColor ?? primaryColorFunction)
           ),
           child: Padding(
             padding: const EdgeInsets.only(top: 5, bottom: 5, left: 15, right: 15),

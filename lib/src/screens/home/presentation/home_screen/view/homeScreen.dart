@@ -145,7 +145,7 @@ class HomeScreen extends StatelessWidget {
                         color: secondaryColor,
                                   ),
                      onTap: ()=> NavigatorRoute.navigateToRoute(GenerateQR())
-                                  ),
+                       ),
                   ],
                 )),
             addVerticalSp(31.sp),

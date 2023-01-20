@@ -29,12 +29,12 @@ class _IntroViewState extends State<IntroView>
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 5), () {
-      navigateAndReplaceRoute(context, const OnboardingScreeen());
+   
+   NavigatorRoute.navigateToRoute(const OnboardingScreeen());
     });
-    ScreenUtil.init(context);
-    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+    // ScreenUtil.init(context);
+  
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: backgroundColor,
       body: Center(
         child: Column(

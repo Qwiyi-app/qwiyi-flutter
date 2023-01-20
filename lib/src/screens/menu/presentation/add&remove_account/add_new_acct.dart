@@ -21,7 +21,7 @@ class AddNewAccount extends StatelessWidget {
     return Scaffold(
       appBar:  QwiyiAppBar(
         rIcon: Icons.close,
-        onTap: () => navigateAndRemoveUntilRoute(context, const AddAccountView()),
+        onTap: () => NavigatorRoute.navigateAndRemoveUntilRoute(const AddAccountView()),
       ),
       body: 
         Container(
@@ -52,7 +52,7 @@ class AddNewAccount extends StatelessWidget {
                 ),
            const Spacer(),
            QwiyiButton(
-             onClick: ()=> navigateAndRemoveUntilRoute(context, const AddAccountView()),
+             onClick: ()=> NavigatorRoute.navigateAndRemoveUntilRoute(const AddAccountView()),
              label: 'Save')
           ],
         ),

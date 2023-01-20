@@ -23,4 +23,11 @@ class HomeFeatureProvider extends ChangeNotifier{
       }
       notifyListeners();
     }
+
+    // toggle Balance Icon
+    bool toggleIcon = true;
+     void toggleBal(){
+        toggleIcon =! toggleIcon;
+        notifyListeners();
+     }
  }

@@ -7,12 +7,12 @@ import '../share/color.dart';
 class PrimaryButton extends StatelessWidget {
   PrimaryButton(
       {super.key,
-      required this.press,
+       this.press,
       required this.text,
       required this.width,
       required this.textSize});
 
-  GestureTapCallback press;
+  Function()? press;
   String text;
   double width, textSize;
 
@@ -29,8 +29,9 @@ class PrimaryButton extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(20))),
           child: Center(
               child: Text(text,
-                  style: QwiyiTypography.normalSecondaryTextStyle(context).copyWith(
-                      fontSize: textSize, fontWeight: FontWeight.w700))),
+                  style: QwiyiTypography.normalSecondaryTextStyle(context)
+                      .copyWith(
+                          fontSize: textSize, fontWeight: FontWeight.w700))),
         ));
   }
 }
@@ -40,28 +41,32 @@ class SecondaryButton extends StatelessWidget {
       {super.key,
       required this.press,
       required this.text,
+      required this.radius,
       required this.width,
       required this.textSize});
 
   GestureTapCallback press;
   String text;
-  double width, textSize;
+  double width, textSize, radius;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
         onTap: press,
         child: Container(
-            height: screenAwareSize(55, context),
+            height: screenAwareSize(65, context),
             width: screenAwareSize(width, context, width: true),
-            decoration: const BoxDecoration(
-                color: secondaryColor,
+            decoration: BoxDecoration(
+                color: secondaryColor.withOpacity(0.43),
                 shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.all(Radius.circular(20))),
+                borderRadius: const BorderRadius.all(Radius.circular(20))),
             child: Center(
               child: Text(text,
-                  style: QwiyiTypography.normalSecondaryTextStyle(context).copyWith(
-                      fontSize: textSize, fontWeight: FontWeight.w700)),
+                  style: QwiyiTypography.normalSecondaryTextStyle(context)
+                      .copyWith(
+                          fontSize: textSize,
+                          fontWeight: FontWeight.w700,
+                          color: primaryColor)),
             )));
   }
 }

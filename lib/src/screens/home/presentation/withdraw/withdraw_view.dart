@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/add_money/add_money.dart';
 import 'package:qwiyi_flutter/src/screens/home/presentation/withdraw/otp_withdraw_view.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
@@ -23,7 +21,7 @@ class WithdrawView extends StatelessWidget {
     return Scaffold(
       appBar:  QwiyiAppBar(
         lColor: kBColor,
-        onClick: () => navigateAndRemoveUntilRoute(context, AddMoney()),
+        onClick: () => Navigator.pop(context),
         lIcon: Icons.arrow_back_ios,
       ),
       body: SingleChildScrollView(
@@ -59,7 +57,7 @@ class WithdrawView extends StatelessWidget {
                   addVerticalSp(60),
                   QwiyiButton(
                     width: screenWidth(context),
-                    onClick: () => navigateAndRemoveUntilRoute(context, const WithdrawOTP()), 
+                    onClick: () => NavigatorRoute.navigateToRoute(const WithdrawOTP()), 
                   label: 'Withdraw'
                   )
                   

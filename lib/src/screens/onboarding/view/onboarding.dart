@@ -39,8 +39,10 @@ class OnboardingScreeen extends StatelessWidget {
                   child: Column(
                 children: [
                   PrimaryButton(
-                      press: () =>
-                          navigateToRoute(context, const SignInScreen()),
+                      press: () {
+                      NavigatorRoute.navigateToRoute(const SignInScreen());
+                      },
+                         
                       text: 'Sign In',
                       width: 150,
                       textSize: 18.sp),
@@ -53,7 +55,7 @@ class OnboardingScreeen extends StatelessWidget {
                   addVerticalSp(9),
                   InkWell(
                     onTap: () {
-                      navigateToRoute(context, const SignUpScreen());
+                      NavigatorRoute.navigateToRoute(const SignUpScreen());
                     },
                     child: Text(
                       "Sign Up for Qwiyi",

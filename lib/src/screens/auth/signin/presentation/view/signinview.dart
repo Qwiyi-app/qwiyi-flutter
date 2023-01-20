@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qwiyi_flutter/src/screens/navbar/nav_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 import '../../../../../widget/errors.dart';
@@ -45,10 +46,14 @@ class _SignInScreenState extends State<SignInScreen> {
           centerTitle: true,
           backgroundColor: backgroundColor,
           automaticallyImplyLeading: true,
+          leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios)),
           elevation: 0,
           title: Text(
             'Sign In',
-            style: QwiyiTypography.bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp),
+            style: QwiyiTypography.bigPrimaryTextStyle(context)
+                .copyWith(fontSize: 36.sp),
           )),
       body: SafeArea(
           child: SizedBox(
@@ -88,7 +93,10 @@ class _SignInScreenState extends State<SignInScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   PrimaryButton(
-                      press: () {},
+                      press: () {
+                        NavigatorRoute.navigateToRoute(const CustomBottomNav());
+                       // navigateAndReplaceRoute(context, const HomeScreen());
+                      },
                       text: 'Sign In',
                       width: 150,
                       textSize: 18.sp),
@@ -101,12 +109,13 @@ class _SignInScreenState extends State<SignInScreen> {
                   addVerticalSp(9),
                   InkWell(
                     onTap: () {
-                      navigateToRoute(context, const SignUpScreen());
+                      NavigatorRoute.navigateToRoute(SignUpScreen());
                     },
                     child: Text(
                       "Sign Up for Qwiyi",
-                      style: QwiyiTypography.normalPrimaryTextStyle(context).copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.w500),
+                      style: QwiyiTypography.normalPrimaryTextStyle(context)
+                          .copyWith(
+                              fontSize: 16.sp, fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],

@@ -20,7 +20,7 @@ class WithdrawOTP extends StatelessWidget {
       appBar:  QwiyiAppBar(
         rIcon: Icons.close,
         rColor: kBColor,
-        onTap: () => navigateAndRemoveUntilRoute(context, WithdrawView()),
+        onTap: () => Navigator.pop(context),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -50,7 +50,7 @@ class WithdrawOTP extends StatelessWidget {
               ),
               addVerticalSp(100),
               QwiyiButton(
-                onClick: () => navigateAndRemoveUntilRoute(context, const DoneWithdrawal()),
+                onClick: () => NavigatorRoute.navigateToRoute(const DoneWithdrawal()),
                 label: 'Confirm',
               )
           ],

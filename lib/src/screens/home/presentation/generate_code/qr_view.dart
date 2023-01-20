@@ -19,7 +19,7 @@ class QRView extends StatelessWidget {
     return Scaffold(
         appBar: QwiyiAppBar(
         lColor: kBColor,
-        onClick: ()=> navigateAndRemoveUntilRoute(context, GenerateQR()),
+        onClick: () => Navigator.pop(context),
         lIcon: Icons.arrow_back_ios
       ),
       body: Container(

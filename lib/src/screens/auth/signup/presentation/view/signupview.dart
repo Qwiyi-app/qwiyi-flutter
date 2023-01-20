@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qwiyi_flutter/src/screens/auth/saveaccount/presentation/view/saveAccountView.dart';
+import 'package:qwiyi_flutter/src/screens/auth/signin/presentation/view/signinview.dart';
 import '../../../../../share/color.dart';
 import '../../../../../widget/errors.dart';
 import '../../../../../share/function.dart';
@@ -45,10 +47,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
         centerTitle: true,
         backgroundColor: backgroundColor,
         automaticallyImplyLeading: true,
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios)),
         elevation: 0,
         title: Text(
           'Sign Up',
-          style: QwiyiTypography.bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp),
+          style: QwiyiTypography.bigPrimaryTextStyle(context)
+              .copyWith(fontSize: 36.sp),
         ),
       ),
       body: SafeArea(
@@ -97,25 +103,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   PrimaryButton(
-                      press: () {},
-                      text: 'Sign In',
+                      press: () {
+                        NavigatorRoute.navigateAndReplaceRoute(
+                            const SaveAccountScreen());
+                      },
+                      text: 'Sign Up',
                       width: 150,
                       textSize: 18.sp),
                   addVerticalSp(16),
                   Text(
-                    "Don't have an account?",
+                    "Already have an account?",
                     style: QwiyiTypography.normalPrimaryTextStyle(context)
                         .copyWith(fontSize: 14.sp),
                   ),
                   addVerticalSp(9),
                   InkWell(
                     onTap: () {
-                      navigateToRoute(context, const SignUpScreen());
+                      NavigatorRoute.navigateToRoute( const SignInScreen());
                     },
                     child: Text(
-                      "Sign Up for Qwiyi",
-                      style: QwiyiTypography.normalPrimaryTextStyle(context).copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.w500),
+                      "Sign In for Qwiyi",
+                      style: QwiyiTypography.normalPrimaryTextStyle(context)
+                          .copyWith(
+                              fontSize: 16.sp, fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],

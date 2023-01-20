@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -10,6 +8,7 @@ import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 import 'package:qwiyi_flutter/src/widget/button/brand_button.dart';
+
 
 class DoneWithdrawal extends StatefulWidget {
   const DoneWithdrawal({super.key});
@@ -38,7 +37,7 @@ class _DoneWithdrawalState extends State<DoneWithdrawal> with TickerProviderStat
          appBar:  QwiyiAppBar(
         rIcon: Icons.close,
         rColor: kBColor,
-        onTap: () => navigateAndRemoveUntilRoute(context, WithdrawView()),
+        onTap:  () => Navigator.pop(context),
       ),
       body: Container(
         width: screenWidth(context),

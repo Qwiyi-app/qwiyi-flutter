@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:qwiyi_flutter/src/screens/home/home_provider.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/add_money/add_money.dart';
 import 'package:qwiyi_flutter/src/screens/home/presentation/receive_money/receive_qr_code.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
@@ -26,7 +25,7 @@ class ReceiveMoneyView extends StatelessWidget {
     return Scaffold(
       appBar: QwiyiAppBar(
         lColor: kBColor,
-        onClick: ()=> navigateAndRemoveUntilRoute(context, AddMoney()),
+        onClick: ()=> Navigator.pop(context),
         lIcon: Icons.arrow_back_ios
       ),
       body: SingleChildScrollView(
@@ -64,8 +63,8 @@ class ReceiveMoneyView extends StatelessWidget {
                 UIHelper.verticalSpaceLarge,
                 UIHelper.verticalSpaceLarge,
                 QwiyiButton(
-                  onClick: ()=> navigateAndRemoveUntilRoute(
-                    context, RQRView(qr: _accountController.text,)) ,
+                  onClick: ()=> NavigatorRoute.navigateToRoute(
+                    RQRView(qr: _accountController.text,)) ,
                 label: 'Generate Qr Code')
             ],
           )

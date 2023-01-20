@@ -7,8 +7,8 @@ import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 
-class UserDetail extends StatelessWidget {
-  const UserDetail({super.key});
+class MenuView extends StatelessWidget {
+  const MenuView({super.key});
   
 
   @override
@@ -66,7 +66,7 @@ class UserDetail extends StatelessWidget {
                ),
                MenuOption(label: 'Edit Profile', onTap: (){},),
                MenuOption(label: 'Add or Remove Account',
-               onTap: () => navigateAndRemoveUntilRoute(context, const AddAccountView()),),
+               onTap: () => NavigatorRoute.navigateToRoute(const AddAccountView()),),
                MenuOption(label: 'Security', onTap: (){},),
                MenuOption(label: 'Rate us', onTap: (){},),
                MenuOption(label: 'Log out', onTap: (){},),

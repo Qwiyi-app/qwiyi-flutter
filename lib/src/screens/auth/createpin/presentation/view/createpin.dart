@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qwiyi_flutter/src/screens/home/presentation/home_screen/view/homeScreen.dart';
+import 'package:qwiyi_flutter/src/screens/navbar/nav_bar.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
 import '../../../../../share/color.dart';
@@ -45,6 +46,9 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
         backgroundColor: backgroundColor,
         automaticallyImplyLeading: true,
         elevation: 0,
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios)),
       ),
       body: SafeArea(
           child: SizedBox(
@@ -89,7 +93,7 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
                 child: SecondaryButton(
                     radius: 20.sp,
                     press: () {
-                      navigateAndReplaceRoute(context, const HomeScreen());
+                      NavigatorRoute.navigateAndRemoveUntilRoute(const CustomBottomNav());
                     },
                     text: 'Create',
                     width: 220.sp,

@@ -25,6 +25,9 @@ class _ViewAccountDetailsScreenState extends State<ViewAccountDetailsScreen> {
         backgroundColor: backgroundColor,
         elevation: 0,
         automaticallyImplyLeading: true,
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios)),
       ),
       body: SafeArea(
           child: SizedBox(
@@ -115,7 +118,7 @@ class _ViewAccountDetailsScreenState extends State<ViewAccountDetailsScreen> {
                     Center(
                       child: PrimaryButton(
                           press: () {
-                            navigateToRoute(context, const CreatePinScreen());
+                            NavigatorRoute.navigateToRoute(const CreatePinScreen());
                           },
                           text: 'Continue',
                           width: 220.sp,

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/add_money/withdraw/otp_withdraw_view.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/home_screen/view/homeScreen.dart';
+import 'package:qwiyi_flutter/src/screens/home/presentation/withdraw/otp_withdraw_view.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
+import 'package:qwiyi_flutter/src/widget/button/brand_button.dart';
+import 'package:qwiyi_flutter/src/widget/button/input_button.dart';
 import 'package:qwiyi_flutter/src/widget/textfield/input_textfield.dart';
-import '../../../../../widget/button/brand_button.dart';
 
 class WithdrawView extends StatelessWidget {
    WithdrawView({super.key});
@@ -21,7 +21,7 @@ class WithdrawView extends StatelessWidget {
     return Scaffold(
       appBar:  QwiyiAppBar(
         lColor: kBColor,
-        onClick: () => navigateAndRemoveUntilRoute(context,  const HomeScreen()),
+        onClick: () => Navigator.pop(context),
         lIcon: Icons.arrow_back_ios,
       ),
       body: SingleChildScrollView(
@@ -43,20 +43,21 @@ class WithdrawView extends StatelessWidget {
                   ),
                   UIHelper.verticalSpaceMedium,
                    QwiyiTextField(
-                  textEditingController: _amountController,
+                  textEditingController: _acctNoController,
                   keyboardType: TextInputType.number,
                   label: 'Account Number',
                   hintText: '1234 567 890',
                   ),
                   UIHelper.verticalSpaceMedium,
-                  const QwiyiInputButton(
+                   QwiyiInputButton(
                     label: 'Bank',
                     hintText: 'Enter Bank',
+                    onTap: (){},
                   ),
                   addVerticalSp(60),
                   QwiyiButton(
                     width: screenWidth(context),
-                    onClick: () => navigateAndRemoveUntilRoute(context, const WithdrawOTP()), 
+                    onClick: () => NavigatorRoute.navigateToRoute(const WithdrawOTP()), 
                   label: 'Withdraw'
                   )
                   
@@ -68,35 +69,3 @@ class WithdrawView extends StatelessWidget {
   }
 }
 
-class QwiyiInputButton extends StatelessWidget {
- 
-  final String? hintText;
-  final String? label;
-
-    const QwiyiInputButton({super.key, this.hintText, this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-        Text(
-          label!,
-          style: QwiyiTypography.normalTextStyle(context).copyWith(
-              fontSize: screenAwareSize(22, context)),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.1),
-            borderRadius: const BorderRadius.all(Radius.circular(10))
-          ),
-          child: ListTile(
-            leading: Text(hintText!),
-            trailing: const Icon(Icons.keyboard_arrow_down_sharp)
-          ),
-        )
-        ],
-      );
-    
-  }
-}

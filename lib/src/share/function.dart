@@ -1,31 +1,52 @@
 import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-void popSheet(BuildContext context) {
-  Navigator.of(context).pop();
+class NavigatorRoute {
+NavigatorRoute._();
+
+ static NavigatorRoute instance = NavigatorRoute._();
+  static GlobalKey<NavigatorState>? navigatorKey = GlobalKey<NavigatorState>();
+  static GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
+
+
+  
+
+  static navigateToRoute(dynamic routeClass) {
+    Navigator.push(navigatorKey!.currentContext!,
+        CupertinoPageRoute(builder: (context) => routeClass));
+  }
+
+  static void navigateAndReplaceRoute(dynamic routeClass) {
+    Navigator.pushReplacement(navigatorKey!.currentContext!,
+        CupertinoPageRoute(builder: (context) => routeClass));
+  }
+
+  static void navigateAndRemoveUntilRoute(dynamic routeClass) {
+    Navigator.pushAndRemoveUntil(navigatorKey!.currentContext!,
+        CupertinoPageRoute(builder: (context) => routeClass), (route) => false);
+  }
 }
 
-navigateToRoute(BuildContext context, dynamic routeClass) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) => routeClass));
-}
 
-void navigateAndReplaceRoute(BuildContext? context, dynamic routeClass) {
-  Navigator.pushReplacement(
-      context!, CupertinoPageRoute(builder: (context) => routeClass));
-}
 
-void navigateAndRemoveUntilRoute(BuildContext? context, dynamic routeClass) {
-  Navigator.pushAndRemoveUntil(context!,
-      CupertinoPageRoute(builder: (context) => routeClass), (route) => false);
-}
 
-void dismissKeyboard() {
-  FocusManager.instance.primaryFocus?.unfocus();
-}
+
 
 NumberFormat currency(context) {
   var format =
       NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN');
   return format;
 }
+
+
+NumberFormat usCurrency(context) {
+  var format =
+      NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'USD');
+  return format;
+}
+
+

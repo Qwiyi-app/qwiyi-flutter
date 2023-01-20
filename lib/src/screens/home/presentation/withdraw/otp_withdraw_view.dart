@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/add_money/withdraw/withdraw_view.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/add_money/withdraw/withdrawal_done_view.dart';
+import 'package:qwiyi_flutter/src/screens/home/presentation/withdraw/withdraw_view.dart';
+import 'package:qwiyi_flutter/src/screens/home/presentation/withdraw/withdrawal_done_view.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
-import '../../../../../widget/button/brand_button.dart';
+import 'package:qwiyi_flutter/src/widget/button/brand_button.dart';
 
 class WithdrawOTP extends StatelessWidget {
   const WithdrawOTP({super.key});
@@ -20,7 +20,7 @@ class WithdrawOTP extends StatelessWidget {
       appBar:  QwiyiAppBar(
         rIcon: Icons.close,
         rColor: kBColor,
-        onTap: () => navigateAndRemoveUntilRoute(context, WithdrawView()),
+        onTap: () => Navigator.pop(context),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -50,7 +50,7 @@ class WithdrawOTP extends StatelessWidget {
               ),
               addVerticalSp(100),
               QwiyiButton(
-                onClick: () => navigateAndRemoveUntilRoute(context, const DoneWithdrawal()),
+                onClick: () => NavigatorRoute.navigateToRoute(const DoneWithdrawal()),
                 label: 'Confirm',
               )
           ],

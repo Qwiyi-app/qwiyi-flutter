@@ -82,8 +82,8 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
               Center(
                 child: PrimaryButton(
                     press: () {
-                      navigateToRoute(
-                          context, const ViewAccountDetailsScreen());
+                      NavigatorRoute.navigateToRoute(
+                          const ViewAccountDetailsScreen());
                     },
                     text: 'Save',
                     width: 220.sp,

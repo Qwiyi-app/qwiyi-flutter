@@ -7,12 +7,12 @@ import '../share/color.dart';
 class PrimaryButton extends StatelessWidget {
   PrimaryButton(
       {super.key,
-      required this.press,
+       this.press,
       required this.text,
       required this.width,
       required this.textSize});
 
-  GestureTapCallback press;
+  Function()? press;
   String text;
   double width, textSize;
 
@@ -54,7 +54,7 @@ class SecondaryButton extends StatelessWidget {
     return InkWell(
         onTap: press,
         child: Container(
-            height: screenAwareSize(55, context),
+            height: screenAwareSize(65, context),
             width: screenAwareSize(width, context, width: true),
             decoration: BoxDecoration(
                 color: secondaryColor.withOpacity(0.43),

@@ -24,7 +24,7 @@ class OnboardingScreeen extends StatelessWidget {
             children: [
               Text('Qwiyi',
                   style:
-                      QwiyiTypography.bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp)),
+                  QwiyiTypography.bigPrimaryTextStyle(context).copyWith(fontSize: 36.sp)),
               Container(
                 height: screenAwareSize(365, context),
                 width: screenAwareSize(235, context, width: true),
@@ -42,7 +42,6 @@ class OnboardingScreeen extends StatelessWidget {
                       press: () {
                       NavigatorRoute.navigateToRoute(const SignInScreen());
                       },
-                         
                       text: 'Sign In',
                       width: 150,
                       textSize: 18.sp),

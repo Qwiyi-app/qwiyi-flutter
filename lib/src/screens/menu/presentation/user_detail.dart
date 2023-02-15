@@ -17,8 +17,7 @@ class MenuView extends StatelessWidget {
     String firstLetter = 'John \nDoe';
     return Scaffold(
       
-      body: Container(
-       
+      body: Container(       
        height: screenHeight(context),
        width: screenWidth(context),
         child: Column(

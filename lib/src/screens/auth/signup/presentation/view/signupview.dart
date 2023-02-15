@@ -49,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         automaticallyImplyLeading: true,
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios)),
+            icon: const Icon(Icons.arrow_back_ios)),
         elevation: 0,
         title: Text(
           'Sign Up',

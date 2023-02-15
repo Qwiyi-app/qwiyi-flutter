@@ -48,7 +48,7 @@ class _SignInScreenState extends State<SignInScreen> {
           automaticallyImplyLeading: true,
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios)),
+            icon: const Icon(Icons.arrow_back_ios)),
           elevation: 0,
           title: Text(
             'Sign In',
@@ -109,7 +109,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   addVerticalSp(9),
                   InkWell(
                     onTap: () {
-                      NavigatorRoute.navigateToRoute(SignUpScreen());
+                      NavigatorRoute.navigateToRoute(const SignUpScreen(),);
                     },
                     child: Text(
                       "Sign Up for Qwiyi",

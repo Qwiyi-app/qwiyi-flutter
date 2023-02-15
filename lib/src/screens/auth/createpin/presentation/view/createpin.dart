@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/home_screen/view/homeScreen.dart';
 import 'package:qwiyi_flutter/src/screens/navbar/nav_bar.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
@@ -48,7 +47,7 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
         elevation: 0,
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios)),
+            icon: const Icon(Icons.arrow_back_ios)),
       ),
       body: SafeArea(
           child: SizedBox(

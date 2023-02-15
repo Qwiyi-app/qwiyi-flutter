@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/withdraw/withdraw_view.dart';
 import 'package:qwiyi_flutter/src/screens/home/presentation/withdraw/withdrawal_done_view.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';

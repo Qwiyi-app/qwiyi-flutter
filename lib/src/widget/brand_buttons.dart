@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 import '../share/color.dart';
@@ -21,7 +22,7 @@ class PrimaryButton extends StatelessWidget {
     return InkWell(
         onTap: press,
         child: Container(
-          height: screenAwareSize(55, context),
+          height: screenAwareSize(55.sp, context),
           width: screenAwareSize(width, context, width: true),
           decoration: const BoxDecoration(
               color: primaryColor,
@@ -54,7 +55,7 @@ class SecondaryButton extends StatelessWidget {
     return InkWell(
         onTap: press,
         child: Container(
-            height: screenAwareSize(65, context),
+            height: screenAwareSize(55.sp, context),
             width: screenAwareSize(width, context, width: true),
             decoration: BoxDecoration(
                 color: secondaryColor.withOpacity(0.43),

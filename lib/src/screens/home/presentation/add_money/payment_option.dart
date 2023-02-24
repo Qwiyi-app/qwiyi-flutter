@@ -1,5 +1,4 @@
-
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';

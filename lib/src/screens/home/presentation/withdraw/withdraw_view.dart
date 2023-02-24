@@ -11,15 +11,15 @@ import 'package:qwiyi_flutter/src/widget/button/input_button.dart';
 import 'package:qwiyi_flutter/src/widget/textfield/input_textfield.dart';
 
 class WithdrawView extends StatelessWidget {
-   WithdrawView({super.key});
+  WithdrawView({super.key});
 
-   final TextEditingController _amountController = TextEditingController();
-   final TextEditingController _acctNoController = TextEditingController();
+  final TextEditingController _amountController = TextEditingController();
+  final TextEditingController _acctNoController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  QwiyiAppBar(
+      appBar: QwiyiAppBar(
         lColor: kBColor,
         onClick: () => Navigator.pop(context),
         lIcon: Icons.arrow_back_ios,
@@ -29,13 +29,17 @@ class WithdrawView extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  [
+            children: [
               UIHelper.verticalSpaceLarge,
-                Text('Withdraw', 
+              Text(
+                'Withdraw',
                 style: QwiyiTypography.bigTextStyle(context).copyWith(
-                  fontWeight: FontWeight.w900, fontSize: 35.sp, color: primaryColor),),
-                  UIHelper.verticalSpaceMedium,
-                QwiyiTextField(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 35.sp,
+                    color: primaryColor),
+              ),
+              UIHelper.verticalSpaceMedium,
+              QwiyiTextField(
                   textEditingController: _amountController,
                   keyboardType: TextInputType.number,
                   hintText: '0.00',
@@ -64,7 +68,7 @@ class WithdrawView extends StatelessWidget {
             ],
           ),
         ),
-      ) ,
+      ),
     );
   }
 }

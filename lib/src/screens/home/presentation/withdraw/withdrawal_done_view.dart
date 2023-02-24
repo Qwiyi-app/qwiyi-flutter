@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
+// import 'package:lottie/lottie.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
@@ -20,7 +20,6 @@ class _DoneWithdrawalState extends State<DoneWithdrawal> with TickerProviderStat
 
   @override
   void initState() {
-
     super.initState();
     _controller = AnimationController(vsync: this);
   }
@@ -50,16 +49,16 @@ class _DoneWithdrawalState extends State<DoneWithdrawal> with TickerProviderStat
             UIHelper.verticalSpaceMedium,
             CircleAvatar(
               radius: 90,
-              backgroundColor: secoondaryColor,
-              child: Lottie.network('https://assets6.lottiefiles.com/packages/lf20_jy2fkag5.json',
-              controller: _controller,
-              onLoaded: (value){
-                _controller
-                ..duration = value.duration
-                ..forward();
-              }
-              )
-             // Icon(Icons.check, color: kBColor, size: 60,),
+              backgroundColor: secoondaryColor.withOpacity(0.43),
+              // child: Lottie.network('https://assets6.lottiefiles.com/packages/lf20_jy2fkag5.json',
+              // controller: _controller,
+              // onLoaded: (value){
+              //   _controller
+              //   ..duration = value.duration
+              //   ..forward();
+              // }
+              // )
+             child: const Icon(Icons.check, color: kBColor, size: 60,),
             ),
             addVerticalSp(150),
             QwiyiButton(

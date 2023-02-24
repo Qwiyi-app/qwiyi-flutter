@@ -4,9 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qwiyi_flutter/src/screens/auth/createpin/presentation/view/createpin.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
+import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
-import '../../../../../share/styling.dart';
+
 
 class ViewAccountDetailsScreen extends StatefulWidget {
   const ViewAccountDetailsScreen({super.key});

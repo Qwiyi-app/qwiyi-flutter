@@ -6,7 +6,8 @@ import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
-import '../../../../../widget/errors.dart';
+import 'package:qwiyi_flutter/src/widget/errors.dart';
+
 
 class SaveAccountScreen extends StatefulWidget {
   const SaveAccountScreen({super.key});
@@ -118,7 +119,7 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
           return null;
         },
         keyboardType: TextInputType.text,
-        decoration: textFieldDecoration('Enter your bank name'));
+        decoration: textFieldDecoration('Enter your bank name', false));
   }
 
   TextFormField buildAccNumField() {
@@ -143,6 +144,6 @@ class _SaveAccountScreenState extends State<SaveAccountScreen> {
           return null;
         },
         keyboardType: TextInputType.number,
-        decoration: textFieldDecoration('Enter your Account Number'));
+        decoration: textFieldDecoration('Enter your Account Number', false));
   }
 }

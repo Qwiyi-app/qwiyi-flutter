@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/navbar/nav_bar.dart';
+import 'package:qwiyi_flutter/src/screens/auth/signup/presentation/view/signupview.dart';
+import 'package:qwiyi_flutter/src/screens/home/presentation/home_screen/view/homeScreen.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
-import '../../../../../widget/errors.dart';
-import '../../../../../share/function.dart';
-import '../../../../../share/styling.dart';
-import '../../../../../widget/brand_buttons.dart';
-import '../../../signup/presentation/view/signupview.dart';
+import 'package:qwiyi_flutter/src/share/function.dart';
+import 'package:qwiyi_flutter/src/share/styling.dart';
+import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
+import 'package:qwiyi_flutter/src/widget/errors.dart';
+
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -48,7 +49,7 @@ class _SignInScreenState extends State<SignInScreen> {
           automaticallyImplyLeading: true,
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: const Icon(Icons.arrow_back_ios)),
+            icon: const Icon(Icons.arrow_back_ios),),
           elevation: 0,
           title: Text(
             'Sign In',
@@ -94,7 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   PrimaryButton(
                       press: () {
-                        NavigatorRoute.navigateToRoute(const CustomBottomNav());
+                        NavigatorRoute.navigateToRoute(const HomeScreen());
                        // navigateAndReplaceRoute(context, const HomeScreen());
                       },
                       text: 'Sign In',
@@ -158,7 +159,7 @@ class _SignInScreenState extends State<SignInScreen> {
           return null;
         },
         keyboardType: TextInputType.emailAddress,
-        decoration: textFieldDecoration('Johndoe@mail.com'));
+        decoration: textFieldDecoration('Johndoe@mail.com', false));
   }
 
   TextFormField buildPasswordField() {
@@ -183,6 +184,6 @@ class _SignInScreenState extends State<SignInScreen> {
         },
         obscureText: true,
         keyboardType: TextInputType.text,
-        decoration: textFieldDecoration('Pick a strong password'));
+        decoration: textFieldDecoration('Pick a strong password', false));
   }
 }

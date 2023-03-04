@@ -15,6 +15,7 @@ const String nameNullError = "Please enter your name";
 const String phoneNumberNullError = "Please enter your phone number";
 const String bankNameNullError = "Please enter your Bank Name";
 const String accNumNullError = "Please enter your Account Number";
+const String amountNullError = "Please enter an Amount";
 const String pinNullError = "Please enter your pin";
 const String incorrectPinError = "Pin is incorrect";
 const String pinMatchError = "Pin's does not match";
@@ -45,7 +46,8 @@ class FormError extends StatelessWidget {
         addVerticalSp(5),
         Text(
           error,
-          style: QwiyiTypography.normalPrimaryTextStyle(context).copyWith(color: Colors.red),
+          style: QwiyiTypography.normalPrimaryTextStyle(context)
+              .copyWith(color: Colors.red),
         )
       ],
     );

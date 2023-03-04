@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qwiyi_flutter/src/screens/home/presentation/home_screen/view/homeScreen.dart';
-import 'package:qwiyi_flutter/src/screens/navbar/nav_bar.dart';
 import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
-import '../../../../../share/color.dart';
-import '../../../../../share/styling.dart';
-import '../../../../../share/ui_helper.dart';
-import '../../../../../widget/errors.dart';
+import 'package:qwiyi_flutter/src/share/color.dart';
+import 'package:qwiyi_flutter/src/share/styling.dart';
+import 'package:qwiyi_flutter/src/share/ui_helper.dart';
+import 'package:qwiyi_flutter/src/widget/errors.dart';
 
 class CreatePinScreen extends StatefulWidget {
   const CreatePinScreen({super.key});
@@ -48,7 +47,7 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
         elevation: 0,
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios)),
+            icon: const Icon(Icons.arrow_back_ios)),
       ),
       body: SafeArea(
           child: SizedBox(
@@ -93,7 +92,7 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
                 child: SecondaryButton(
                     radius: 20.sp,
                     press: () {
-                      NavigatorRoute.navigateAndRemoveUntilRoute(const CustomBottomNav());
+                      NavigatorRoute.navigateAndRemoveUntilRoute(const HomeScreen());
                     },
                     text: 'Create',
                     width: 220.sp,
@@ -128,7 +127,7 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
           return null;
         },
         keyboardType: TextInputType.number,
-        decoration: textFieldDecoration('1234'));
+        decoration: textFieldDecoration('1234', false));
   }
 
   TextFormField buildConfirmPinField() {
@@ -153,6 +152,6 @@ class _CreatePinScreenState extends State<CreatePinScreen> {
           return null;
         },
         keyboardType: TextInputType.number,
-        decoration: textFieldDecoration('1234'));
+        decoration: textFieldDecoration('1234', false));
   }
 }

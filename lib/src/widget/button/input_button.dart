@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
 import 'package:qwiyi_flutter/src/share/styling.dart';

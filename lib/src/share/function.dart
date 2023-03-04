@@ -1,19 +1,15 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// ignore: depend_on_referenced_packages
+
 
 class NavigatorRoute {
-NavigatorRoute._();
+  NavigatorRoute._();
 
- static NavigatorRoute instance = NavigatorRoute._();
+  static NavigatorRoute instance = NavigatorRoute._();
   static GlobalKey<NavigatorState>? navigatorKey = GlobalKey<NavigatorState>();
-  static GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
-
-
-
-  
+  static GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey =
+      GlobalKey<ScaffoldMessengerState>();
 
   static navigateToRoute(dynamic routeClass) {
     Navigator.push(navigatorKey!.currentContext!,
@@ -31,22 +27,18 @@ NavigatorRoute._();
   }
 }
 
+// NumberFormat currency(context) {
+//   var format =
+//       NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN');
+//   return format;
+// }
 
+// class NumberFormat {
+//   static simpleCurrency({required String locale, required String name}) {}
+// }
 
-
-
-
-NumberFormat currency(context) {
-  var format =
-      NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN');
-  return format;
-}
-
-
-NumberFormat usCurrency(context) {
-  var format =
-      NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'USD');
-  return format;
-}
-
-
+// NumberFormat usCurrency(context) {
+//   var format =
+//       NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'USD');
+//   return format;
+// }

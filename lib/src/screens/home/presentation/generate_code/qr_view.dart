@@ -1,11 +1,8 @@
-
-  import 'package:barcode_widget/barcode_widget.dart';
+// import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/home/presentation/generate_code/generate_code_view.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
 import 'package:qwiyi_flutter/src/share/color.dart';
-import 'package:qwiyi_flutter/src/share/function.dart';
 import 'package:qwiyi_flutter/src/share/ui_helper.dart';
 import 'package:qwiyi_flutter/src/widget/button/brand_button.dart';
 
@@ -30,11 +27,11 @@ class QRView extends StatelessWidget {
          children: [
             UIHelper.verticalSpaceLarge,
             UIHelper.verticalSpaceMedium,
-           BarcodeWidget(
-            height: 220.h,
-            data: acctName.trim(),
-           barcode: Barcode.qrCode()
-           ),
+          //  BarcodeWidget(
+          //   height: 220.h,
+          //   data: acctName.trim(),
+          //  barcode: Barcode.qrCode()
+          //  ),
            UIHelper.verticalSpaceLarge,
            UIHelper.verticalSpaceLarge,
            QwiyiButton(

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qwiyi_flutter/src/screens/auth/saveaccount/presentation/view/saveAccountView.dart';
 import 'package:qwiyi_flutter/src/screens/auth/signin/presentation/view/signinview.dart';
-import '../../../../../share/color.dart';
-import '../../../../../widget/errors.dart';
-import '../../../../../share/function.dart';
-import '../../../../../share/styling.dart';
-import '../../../../../share/ui_helper.dart';
-import '../../../../../widget/brand_buttons.dart';
+import 'package:qwiyi_flutter/src/screens/auth/signup/presentation/view/verifyemailview.dart';
+import 'package:qwiyi_flutter/src/share/color.dart';
+import 'package:qwiyi_flutter/src/share/function.dart';
+import 'package:qwiyi_flutter/src/share/styling.dart';
+import 'package:qwiyi_flutter/src/share/ui_helper.dart';
+import 'package:qwiyi_flutter/src/widget/brand_buttons.dart';
+import 'package:qwiyi_flutter/src/widget/errors.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -49,7 +50,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         automaticallyImplyLeading: true,
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios)),
+            icon: const Icon(Icons.arrow_back_ios)),
         elevation: 0,
         title: Text(
           'Sign Up',
@@ -105,7 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   PrimaryButton(
                       press: () {
                         NavigatorRoute.navigateAndReplaceRoute(
-                            const SaveAccountScreen());
+                            const VerifyEmailScreen());
                       },
                       text: 'Sign Up',
                       width: 150,
@@ -119,7 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   addVerticalSp(9),
                   InkWell(
                     onTap: () {
-                      NavigatorRoute.navigateToRoute( const SignInScreen());
+                      NavigatorRoute.navigateToRoute(const SignInScreen());
                     },
                     child: Text(
                       "Sign In for Qwiyi",
@@ -168,7 +169,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           return null;
         },
         keyboardType: TextInputType.emailAddress,
-        decoration: textFieldDecoration('Johndoe@mail.com'));
+        decoration: textFieldDecoration('Johndoe@mail.com', false));
   }
 
   TextFormField buildPasswordField() {
@@ -193,7 +194,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         },
         obscureText: true,
         keyboardType: TextInputType.text,
-        decoration: textFieldDecoration('Pick a strong password'));
+        decoration: textFieldDecoration('Pick a strong password', false));
   }
 
   TextFormField buildNameField() {
@@ -217,6 +218,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
           return null;
         },
         keyboardType: TextInputType.text,
-        decoration: textFieldDecoration('John Doe'));
+        decoration: textFieldDecoration('John Doe', false));
   }
 }

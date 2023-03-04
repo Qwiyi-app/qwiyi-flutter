@@ -14,7 +14,7 @@ class AddNewAccount extends StatelessWidget {
    AddNewAccount({super.key});
 
  
-  TextEditingController _acctController = TextEditingController();
+  final TextEditingController _acctController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

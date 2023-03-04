@@ -1,6 +1,4 @@
-
-           
- import 'package:barcode_widget/barcode_widget.dart';
+// import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qwiyi_flutter/src/share/appbar/app_bar.dart';
@@ -34,11 +32,11 @@ class RQRView extends StatelessWidget {
              decoration: BoxDecoration(
                border: Border.all(color: primaryColor)
              ),
-             child: BarcodeWidget(
-              height: 220.h,
-              data: qr.trim(),
-             barcode: Barcode.qrCode()
-             ),
+            //  child: BarcodeWidget(
+            //   height: 220.h,
+            //   data: qr.trim(),
+            //  barcode: Barcode.qrCode()
+            //  ),
            ),
            UIHelper.verticalSpaceLarge,
            UIHelper.verticalSpaceLarge,
